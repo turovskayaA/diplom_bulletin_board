@@ -1,5 +1,4 @@
 from django.urls import path
-from rest_framework.routers import DefaultRouter
 
 from announcement.apps import AnnouncementConfig
 from announcement.views import (
@@ -17,9 +16,6 @@ from announcement.views import (
 
 app_name = AnnouncementConfig.name
 
-# router = DefaultRouter()
-# router.register(r"review", ReviewViewSet, basename="review")
-
 urlpatterns = [
     path("adt/create/", AdtCreateApiView.as_view(), name="create"),
     path("adt/list/", AdtListApiView.as_view(), name="list"),
@@ -36,4 +32,3 @@ urlpatterns = [
         "review/delete/<int:pk>/", ReviewDestroyApiView.as_view(), name="review_delete"
     ),
 ]
-# + router.urls

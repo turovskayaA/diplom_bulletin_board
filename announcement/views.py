@@ -125,23 +125,3 @@ class ReviewDestroyApiView(DestroyAPIView):
     serializer_class = ReviewSerializers
     queryset = Review.objects.all()
     permission_classes = [IsUser | IsAdmin]
-
-
-# class ReviewViewSet(viewsets.ModelViewSet):
-#
-#     serializer_class = ReviewSerializers
-#     queryset = Review.objects.all()
-#
-#     def perform_create(self, serializer):
-#         user = serializer.save()
-#         user.author = self.request.user
-#         user.save()
-#
-#     def get_permissions(self):
-#         if self.action == 'list' or self.action == 'retrieve':
-#             permission_classes = [IsUser | IsAdmin]
-#         elif self.action == 'update':
-#             permission_classes = [IsUser | IsAdmin]
-#         elif self.action == 'destroy':
-#             permission_classes = [IsUser | IsAdmin]
-#         return [permission() for permission in permission_classes]
