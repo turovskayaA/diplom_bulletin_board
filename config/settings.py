@@ -178,3 +178,4 @@ CSRF_TRUSTED_ORIGINS = [
     "https://read-and-write.example.com",
 ]
 
+EMAIL_BACKEND = "django.core.mail.backends.console.EmailBackend"
